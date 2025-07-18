@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💎 Royal Silver Plus Jewelry Production Tracker v4 - List View</title>
+    
+    <!-- PWA 설정 -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIlJveWFsIFNpbHZlciBQbHVzIEpld2VscnkgUHJvZHVjdGlvbiBUcmFja2VyIiwKICAic2hvcnRfbmFtZSI6ICJSb3lhbFNpbHZlclRyYWNrZXIiLAogICJkZXNjcmlwdGlvbiI6ICJFbmhhbmNlZCBQcm9kdWN0aW9uIE1hbmFnZW1lbnQgU3lzdGVtIHQ0LjAiLAogICJzdGFydF91cmwiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiM2NjdlZWEiLAogICJ0aGVtZV9jb2xvciI6ICIjNjY3ZWVhIiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEk0SWlCb1pXbG5hSFE5SWpVeU9DSWdkbWxsZDBKdmVEMGlNQ0F3SURVNU5EZ3lPRGdpSUhodGJHNXpQU0pvZEhSd09pOHZkM2QzTG5jekxtOXlaeTh5TURBd0wzTjJaeUkrUEVkbGRpNG5hblJwYm1kOVBWSkZReUVnZDJsa2RHZzlJalEwSWlCb1pXbG5hSFE5SWpRNE1DSWdabWxzYkQwaWJHbHVaV0Z5UjNKaFpHbGxiblFvTVRRd1pHVm5MQ0FqTnpBMFlqRWdNQ1VzSUNFM05qTm1ZV1VnTWpVbExDQWpZMjltT1RJMWF5QTFNQ1VzSUNGcGJEVjFkMmd6TkNBMU5DVXNJQ0YwYmprM1pqa2dNVEF3SlNraUx6ND0iLAogICAgICAic2l6ZXMiOiAiNTEyeDUxMiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbDtiYXNlNjQsUEhOMlp5QjNhV1IwYUQwaU5USTRJaUJvWldsbmFIUTlJalV5T0NJZ2RtbGxkMEp2ZUQwaU1DQXdJRFV5T0NBeU9EZ2lJSGh0Ykc1eklpSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQRkpsWTNRZ2QybGtkR2c5SURRNE1DSWdhR1ZwWjJoMFBTSTBPREFpSUdacGJHdzlJbWRzYVc1bFlYSW9NVE0xWkdWbkxDQWpOalkzWldWaElEQWxMQ0FqTnpZMFltRXlJREkxSlN3Z0lHWXdPVE5tWWlBMU1DVXNJQ0FqWmpVMU56WmpJRGMxSlN3Z0lHUTBaR0ZqWm1VZ01UQXdKU2tpTHo0OFkybHlZMnhsSUdONFBTSTFNalFpSUdONVBTSTJOQ0lpSUhJOUlqVXpJaUJtYVd4c1BTSS5jZkZHZkhOaFkzUnZjSGg5Y0hJdGIzTUJJblFnUkdMM052WW5nZ2VHaHRRdVNuUmlJNElGaDNLVjJ4VlNPOUNpQzVPU3dzSUNBamFYUWpNa1p5T2pGNWVsZEZNblIyTWlyYWNtNTRNM1Y5SWdmeElUbHZJZkVnYzNGVE1pQjNMelVpSUdacGJHdzlJbU5oSWs1aVl6ZGRNMWhVZXlKMUlFNVNiaUJ1VHpRdlNVczVaeUFPUml0aWNDWWNNZGdlUFNBZ1VHbDJWbGxPSUVabllHbHBUa0l1VDFzZ1FGWnNWa1pZUjJ4TnMxNEdaRnhvWWl3OWVVOSU5MWZwWU9seVJjR016ZEpBSHhmZUNYOU9oUlJLT1NrZWNsbzZJM2hEZWpnWlJUOE5hM3BzZWs2Q2FYWnJmQ0hsWW5vK1BuaEZiUWpKRGh3Wk9UaEVBSmVvR2xzZWt1akhmUU1uUlRWWmlVdXJqZ1V5aFRqRWRvRWxJZVFROXNlalI5ZUU4OEwrWnZaSVlubzhlWDEwOE1ZNEZNMVd6a0RmOUFJWU9HVGpZKzNnK2RYajA5ZWlOOG4xSDU5OHNkTjJBOTBHWXo5RUU2SjlvNDNnMGs1Y21xOWI0aXcxZ3k1YXozT0RoTDJPU2dyQWNPU3V3WWVaVGdmaVE4dVBVbGd3OEJyOWRjNkxZZklLZ2hGSDJKeTNOSjVPOXlJNEFtV0hVZGJXejU4ZlRIWkRYbTZVOEU3WkVVV3loNWVYMGRZZTRLOXNlZzRkOVJrcTNnOD0iLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiCiAgICB9CiAgXQp9">
+    <meta name="theme-color" content="#667eea">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="RoyalSilverTracker">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTI4IiBoZWlnaHQ9IjUyOCIgdmlld0JveD0iMCAwIDUyOCAyODgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PFJlY3Qgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI0ODAiIGZpbGw9ImxpbmVhckdyYWRpZW50KDEzNWRlZywgIzY2N2VlYSAwJSwgIzc2NGJhMiAyNSUsICNmMDkzZmIgNTAlLCAjZjU1NzZjIDc1JSwgI2Q0ZGFjZmUgMTAwJSkiLz48Y2lyY2xlIGN4PSI1MjQiIGN5PSI2NCIgcj0iNTMiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=">
+    
+    <!-- React 라이브러리 -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <style>
+        :root {
+            --text-color: #ffffff;
+            --text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            color: var(--text-color);
+            min-height: 100vh;
+            padding: 1rem;
+            transition: color 2s ease;
+        }
+        
+        @keyframes gradientShift {
+            0% { 
+                background-position: 0% 50%; 
+                --text-color: #ffffff;
+            }
+            25% { 
+                background-position: 100% 50%; 
+                --text-color: #1a1a1a;
+            }
+            50% { 
+                background-position: 100% 100%; 
+                --text-color: #2d1b69;
+            }
+            75% { 
+                background-position: 0% 100%; 
+                --text-color: #0a4a3a;
+            }
+            100% { 
+                background-position: 0% 50%; 
+                --text-color: #ffffff;
+            }
+        }
+
+        @keyframes textColorShift {
+            0% { color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+            25% { color: #1a1a1a; text-shadow: 2px 2px 4px rgba(255,255,255,0.3); }
+            50% { color: #2d1b69; text-shadow: 2px 2px 4px rgba(255,255,255,0.5); }
+            75% { color: #0a4a3a; text-shadow: 2px 2px 4px rgba(255,255,255,0.4); }
+            100% { color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+        }
+        
+        .header {
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 3rem;
+            margin: 0 0 1rem 0;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            margin: 0;
+            opacity: 0.9;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .save-status {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 0.75rem 1rem;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            min-width: 140px;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .save-status.saving {
+            background: rgba(251, 191, 36, 0.2);
+            border-color: rgba(251, 191, 36, 0.4);
+            color: #fbbf24;
+        }
+        
+        .save-status.saved {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.4);
+            color: #10b981;
+        }
+        
+        .save-status.error {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.4);
+            color: #ef4444;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1rem;
+        }
+        
+        .search-box:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+        
+        .filter-select {
+            padding: 0.75rem 1rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+        
+        .data-controls {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .data-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .data-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+        
+        .data-btn.export {
+            background: rgba(59, 130, 246, 0.2);
+            border-color: rgba(59, 130, 246, 0.4);
+        }
+        
+        .data-btn.import {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+        
+        .data-btn.reset {
+            background: rgba(239, 68, 68, 0.2);
+            border-color: rgba(239, 68, 68, 0.4);
+        }
+        
+        .data-btn.install {
+            background: rgba(16, 185, 129, 0.2);
+            border-color: rgba(16, 185, 129, 0.4);
+            color: #10b981;
+        }
+        
+        .last-saved {
+            font-size: 0.75rem;
+            opacity: 0.8;
+            margin-top: 0.25rem;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .stat-card h3 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .stat-card .number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .stat-card .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .products-section {
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .products-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .products-header h2 {
+            margin: 0;
+            font-size: 1.8rem;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .add-btn {
+            background: linear-gradient(135deg, #f59e0b, #d97706);
+            border: none;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: transform 0.2s ease;
+        }
+        
+        .add-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* 새로운 테이블 형태 레이아웃 */
+        .products-table {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .table-header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem 1.5rem;
+            display: grid;
+            grid-template-columns: 80px 200px 1fr auto 60px 60px 60px 60px 60px 60px 60px 60px 80px;
+            gap: 1rem;
+            align-items: center;
+            font-weight: bold;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .table-header-mobile {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            font-weight: bold;
+            text-align: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .product-row {
+            padding: 1rem 1.5rem;
+            display: grid;
+            grid-template-columns: 80px 200px 1fr auto 60px 60px 60px 60px 60px 60px 60px 60px 80px;
+            gap: 1rem;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            min-height: 80px;
+            animation: textColorShift 15s ease infinite;
+        }
+        
+        .product-row:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .product-row:last-child {
+            border-bottom: none;
+        }
+
+        .product-image-cell {
+            width: 60px;
+            height: 60px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-image-cell img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-image-cell .placeholder {
+            font-size: 1.5rem;
+            opacity: 0.5;
+        }
+
+        .product-info-cell {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .product-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .product-details {
+            font-size: 0.85rem;
+            opacity: 0.8;
+        }
+
+        .progress-cell {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-text {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar-small {
+            width: 60px;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill-small {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+
+        .process-cell {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .process-check {
+            width: 40px;
+            height: 40px;
+            border-radius: 8px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .process-check.completed {
+            background: rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
+            color: #10b981;
+            box-shadow: 0 2px 10px rgba(16, 185, 129, 0.3);
+        }
+
+        .process-check:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        .actions-cell {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+
+        .action-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.2s ease;
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .action-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* 모바일 카드형 레이아웃 */
+        .product-card-mobile {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .product-card-mobile:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .product-main-mobile {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            align-items: center;
+        }
+
+        .product-image-mobile {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .processes-grid-mobile {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .floating-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        .notification {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
+            z-index: 1001;
+            animation: slideIn 0.3s ease;
+            max-width: 300px;
+        }
+
+        .notification.error {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 4px 20px rgba(239, 68, 68, 0.4);
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1002;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            width: 100%;
+            max-width: 600px;
+            max-height: 90vh;
+            overflow-y: auto;
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .modal h2 {
+            margin: 0 0 1.5rem 0;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #333;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .form-input:focus {
+            outline: none;
+            background: white;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+        }
+
+        .image-upload-section {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .image-upload-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .image-preview {
+            width: 100%;
+            max-width: 200px;
+            height: 150px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .image-preview img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .image-preview .placeholder {
+            font-size: 3rem;
+            opacity: 0.5;
+        }
+
+        .file-input {
+            margin-bottom: 1rem;
+        }
+
+        .form-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .form-buttons button {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s ease;
+        }
+
+        .cancel-btn {
+            background: rgba(255, 255, 255, 0.2);
+            animation: textColorShift 15s ease infinite;
+        }
+
+        .cancel-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .loading-spinner {
+            width: 12px;
+            height: 12px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-left: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .image-error {
+            color: #ef4444;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+        }
+
+        /* 반응형 처리 */
+        @media (max-width: 1024px) {
+            .table-header,
+            .product-row {
+                display: none;
+            }
+            
+            .table-header-mobile {
+                display: block;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            .table-header-mobile,
+            .product-card-mobile {
+                display: none;
+            }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            opacity: 0.7;
+            animation: textColorShift 15s ease infinite;
+        }
+    </style>
+</head>
+<body>
+    <div id="root">
+        <div style="text-align: center; padding: 3rem;">
+            <h1>💎 Loading Royal Silver Plus Jewelry Tracker v4...</h1>
+            <p>📋 Initializing list view...</p>
+        </div>
+    </div>
+
+    <script type="text/babel">
+        // PWA 서비스 워커 등록
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                const swCode = `
+                    const CACHE_NAME = 'royal-silver-jewelry-tracker-v4';
+                    const urlsToCache = ['/'];
+                    
+                    self.addEventListener('install', (event) => {
+                        event.waitUntil(
+                            caches.open(CACHE_NAME)
+                                .then((cache) => cache.addAll(urlsToCache))
+                        );
+                    });
+                    
+                    self.addEventListener('fetch', (event) => {
+                        event.respondWith(
+                            caches.match(event.request)
+                                .then((response) => {
+                                    if (response) {
+                                        return response;
+                                    }
+                                    return fetch(event.request);
+                                })
+                        );
+                    });
+                `;
+                
+                const blob = new Blob([swCode], { type: 'application/javascript' });
+                const swUrl = URL.createObjectURL(blob);
+                
+                navigator.serviceWorker.register(swUrl)
+                    .then((registration) => {
+                        console.log('✅ PWA Service Worker registered:', registration);
+                    })
+                    .catch((error) => {
+                        console.log('❌ Service Worker registration failed:', error);
+                    });
+            });
+        }
+
+        // 설치 프롬프트 처리
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('💾 PWA 설치 가능합니다!');
+        });
+
+        console.log('🚀 Royal Silver Plus Jewelry Tracker v4 with list view starting...');
+        
+        if (typeof React === 'undefined') {
+            console.error('❌ React not loaded!');
+            document.getElementById('root').innerHTML = `
+                <div style="text-align: center; padding: 2rem; color: white;">
+                    <h1>❌ React Loading Failed</h1>
+                    <p>Unable to load React library. Please refresh the page.</p>
+                </div>
+            `;
+        } else {
+            console.log('✅ React loaded successfully!');
+            
+            const { useState, useEffect, useMemo, useCallback, useRef } = React;
+
+            const RoyalSilverJewelryTrackerListView = () => {
+                console.log('📋 Component with list view rendering...');
+                
+                // Storage keys
+                const STORAGE_KEYS = {
+                    products: 'royal_silver_jewelry_tracker_products_v4_list',
+                    lastSaved: 'royal_silver_jewelry_tracker_last_saved_v4_list',
+                    version: 'royal_silver_jewelry_tracker_version_v4_list'
+                };
+
+                // 초기 로딩 추적용 ref
+                const isInitialLoad = useRef(true);
+                const saveTimeoutRef = useRef(null);
+
+                // 8가지 제작 공정
+                const processes = [
+                    { id: 'cad', name: 'CAD', icon: '🖥️' },
+                    { id: 'wax', name: 'Wax', icon: '🖨️' },
+                    { id: 'casting', name: 'Casting', icon: '🔥' },
+                    { id: 'filing', name: 'Filing', icon: '🔧' },
+                    { id: 'stone', name: 'Stone', icon: '💎' },
+                    { id: 'engrave', name: 'Engrave', icon: '✏️' },
+                    { id: 'polish', name: 'Polish', icon: '✨' },
+                    { id: 'qc', name: 'QC', icon: '🔍' }
+                ];
+
+                // 이미지를 썸네일로 변환하는 함수
+                const createThumbnail = (file, maxWidth = 200, maxHeight = 200, quality = 0.8) => {
+                    return new Promise((resolve, reject) => {
+                        const canvas = document.createElement('canvas');
+                        const ctx = canvas.getContext('2d');
+                        const img = new Image();
+                        
+                        img.onload = () => {
+                            // 원본 비율 유지하면서 크기 조정
+                            let { width, height } = img;
+                            
+                            if (width > height) {
+                                if (width > maxWidth) {
+                                    height = (height * maxWidth) / width;
+                                    width = maxWidth;
+                                }
+                            } else {
+                                if (height > maxHeight) {
+                                    width = (width * maxHeight) / height;
+                                    height = maxHeight;
+                                }
+                            }
+                            
+                            canvas.width = width;
+                            canvas.height = height;
+                            
+                            // 이미지 그리기
+                            ctx.drawImage(img, 0, 0, width, height);
+                            
+                            // base64로 변환 (JPEG, 품질 조정)
+                            const thumbnailDataUrl = canvas.toDataURL('image/jpeg', quality);
+                            resolve(thumbnailDataUrl);
+                        };
+                        
+                        img.onerror = () => reject(new Error('Failed to create thumbnail'));
+                        
+                        if (typeof file === 'string') {
+                            img.src = file;
+                        } else {
+                            const reader = new FileReader();
+                            reader.onload = (e) => { img.src = e.target.result; };
+                            reader.onerror = () => reject(new Error('Failed to read file'));
+                            reader.readAsDataURL(file);
+                        }
+                    });
+                };
+
+                // 새로운 기본 제품 데이터 (10개 아이템)
+                const getDefaultProducts = () => [
+                    { 
+                        id: 1, name: 'RS-01E', category: 'earring', material: 'Silver 925',
+                        processes: { cad: true, wax: true, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), 
+                        imageUrl: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=200&h=200&fit=crop&crop=center'
+                    },
+                    { 
+                        id: 2, name: 'RS-02E', category: 'earring', material: '14K Gold',
+                        processes: { cad: true, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), 
+                        imageUrl: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=200&h=200&fit=crop&crop=center'
+                    },
+                    { 
+                        id: 3, name: 'RS-03E', category: 'earring', material: 'Platinum',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 4, name: 'RS-04E', category: 'earring', material: '18K Rose Gold',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 5, name: 'RS-05E', category: 'earring', material: 'Sterling Silver',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 6, name: 'RS-01N', category: 'necklace', material: '18K Gold',
+                        processes: { cad: true, wax: true, casting: true, filing: true, stone: true, engrave: true, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), 
+                        imageUrl: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=200&h=200&fit=crop&crop=center'
+                    },
+                    { 
+                        id: 7, name: 'RS-02N', category: 'necklace', material: 'Silver 925',
+                        processes: { cad: true, wax: true, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 8, name: 'RS-03N', category: 'necklace', material: '14K White Gold',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 9, name: 'RS-04N', category: 'necklace', material: 'Platinum Chain',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    },
+                    { 
+                        id: 10, name: 'RS-05N', category: 'necklace', material: '22K Gold',
+                        processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                        createdAt: new Date().toISOString(), imageUrl: ''
+                    }
+                ];
+
+                // 데이터 검증 함수 (이미지 필드 포함)
+                const validateProductData = (data) => {
+                    if (!Array.isArray(data)) return false;
+                    
+                    return data.every(product => {
+                        return product && 
+                               typeof product.id !== 'undefined' &&
+                               typeof product.name === 'string' &&
+                               typeof product.category === 'string' &&
+                               typeof product.material === 'string' &&
+                               product.processes &&
+                               typeof product.processes === 'object' &&
+                               (product.imageUrl === undefined || typeof product.imageUrl === 'string');
+                    });
+                };
+
+                // 저장된 데이터 로드
+                const loadSavedData = () => {
+                    try {
+                        const savedProducts = localStorage.getItem(STORAGE_KEYS.products);
+                        const lastSaved = localStorage.getItem(STORAGE_KEYS.lastSaved);
+                        
+                        if (savedProducts) {
+                            const parsed = JSON.parse(savedProducts);
+                            
+                            if (validateProductData(parsed)) {
+                                // 기존 데이터에 imageUrl 필드가 없다면 추가
+                                const updatedData = parsed.map(product => ({
+                                    ...product,
+                                    imageUrl: product.imageUrl || ''
+                                }));
+                                
+                                console.log('📁 Loaded and verified saved data:', updatedData.length, 'products');
+                                return {
+                                    products: updatedData,
+                                    lastSaved: lastSaved ? new Date(lastSaved) : null,
+                                    isFromStorage: true
+                                };
+                            } else {
+                                console.warn('⚠️ Saved data is corrupted, using defaults');
+                            }
+                        }
+                    } catch (error) {
+                        console.warn('⚠️ Failed to load saved data:', error);
+                    }
+                    
+                    console.log('🆕 Using new default products with 10 items');
+                    return {
+                        products: getDefaultProducts(),
+                        lastSaved: null,
+                        isFromStorage: false
+                    };
+                };
+
+                // State 초기화
+                const initialData = loadSavedData();
+                const [products, setProducts] = useState(initialData.products);
+                const [lastSaved, setLastSaved] = useState(initialData.lastSaved);
+                const [saveStatus, setSaveStatus] = useState(initialData.isFromStorage ? 'saved' : 'ready');
+                
+                const [searchTerm, setSearchTerm] = useState('');
+                const [filterCategory, setFilterCategory] = useState('all');
+                const [notification, setNotification] = useState('');
+                const [showModal, setShowModal] = useState(false);
+                const [editingProduct, setEditingProduct] = useState(null);
+                const [formData, setFormData] = useState({ name: '', category: 'earring', material: '', imageUrl: '' });
+                
+                // 이미지 관련 state
+                const [imageUploadType, setImageUploadType] = useState('url'); // 'url' or 'file'
+                const [imagePreview, setImagePreview] = useState('');
+                const [imageError, setImageError] = useState('');
+                
+                // PWA 설치 관련 state
+                const [showInstallButton, setShowInstallButton] = useState(false);
+                
+                // PWA 설치 프롬프트 감지
+                useEffect(() => {
+                    const handleBeforeInstallPrompt = (e) => {
+                        e.preventDefault();
+                        window.deferredPrompt = e;
+                        setShowInstallButton(true);
+                        console.log('💾 PWA 설치 가능합니다!');
+                    };
+                    
+                    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+                    
+                    return () => {
+                        window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
+                    };
+                }, []);
+                
+                // PWA 설치 함수
+                const installPWA = async () => {
+                    if (window.deferredPrompt) {
+                        window.deferredPrompt.prompt();
+                        const { outcome } = await window.deferredPrompt.userChoice;
+                        
+                        if (outcome === 'accepted') {
+                            showNotification('📱 앱이 설치되었습니다!');
+                            setShowInstallButton(false);
+                        } else {
+                            showNotification('📱 설치가 취소되었습니다.', 'error');
+                        }
+                        
+                        window.deferredPrompt = null;
+                    } else {
+                        // iOS Safari용 안내
+                        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+                            showNotification('📱 Safari의 공유 버튼 > "홈 화면에 추가"를 선택하세요!');
+                        } else {
+                            showNotification('📱 이 브라우저에서는 설치가 지원되지 않습니다.', 'error');
+                        }
+                    }
+                };
+
+                // 자동 저장 함수
+                const saveData = useCallback(async (dataToSave) => {
+                    if (isInitialLoad.current) {
+                        console.log('⏭️ Skipping save during initial load');
+                        return;
+                    }
+
+                    try {
+                        setSaveStatus('saving');
+                        
+                        if (saveTimeoutRef.current) {
+                            clearTimeout(saveTimeoutRef.current);
+                        }
+
+                        saveTimeoutRef.current = setTimeout(async () => {
+                            try {
+                                if (!validateProductData(dataToSave)) {
+                                    throw new Error('Invalid data structure');
+                                }
+
+                                localStorage.setItem(STORAGE_KEYS.products, JSON.stringify(dataToSave));
+                                localStorage.setItem(STORAGE_KEYS.lastSaved, new Date().toISOString());
+                                localStorage.setItem(STORAGE_KEYS.version, '4.0_list_view');
+                                
+                                const now = new Date();
+                                setLastSaved(now);
+                                setSaveStatus('saved');
+                                
+                                console.log('💾 Data saved successfully:', dataToSave.length, 'products');
+                                
+                                setTimeout(() => {
+                                    setSaveStatus('ready');
+                                }, 2000);
+                                
+                            } catch (error) {
+                                console.error('❌ Save failed:', error);
+                                setSaveStatus('error');
+                                showNotification(`❌ Failed to save: ${error.message}`, 'error');
+                                
+                                setTimeout(() => {
+                                    setSaveStatus('ready');
+                                }, 3000);
+                            }
+                        }, 500);
+                        
+                    } catch (error) {
+                        console.error('❌ Save setup failed:', error);
+                        setSaveStatus('error');
+                    }
+                }, []);
+
+                // 초기 로딩 완료
+                useEffect(() => {
+                    const timer = setTimeout(() => {
+                        isInitialLoad.current = false;
+                        console.log('✅ Initial load completed, auto-save enabled');
+                    }, 1000);
+                    
+                    return () => clearTimeout(timer);
+                }, []);
+
+                // products 변경 시 자동 저장
+                useEffect(() => {
+                    if (products.length > 0 && !isInitialLoad.current) {
+                        saveData(products);
+                    }
+                }, [products, saveData]);
+
+                // 컴포넌트 언마운트 시 타이머 정리
+                useEffect(() => {
+                    return () => {
+                        if (saveTimeoutRef.current) {
+                            clearTimeout(saveTimeoutRef.current);
+                        }
+                    };
+                }, []);
+
+                // 이미지 파일을 썸네일로 변환
+                const convertImageToThumbnail = async (file) => {
+                    // 파일 크기 체크 (5MB 제한)
+                    if (file.size > 5 * 1024 * 1024) {
+                        throw new Error('Image size must be less than 5MB');
+                    }
+
+                    // 파일 타입 체크
+                    if (!file.type.startsWith('image/')) {
+                        throw new Error('Please select a valid image file');
+                    }
+
+                    try {
+                        const thumbnail = await createThumbnail(file, 200, 200, 0.8);
+                        console.log('🖼️ Thumbnail created, size reduced significantly');
+                        return thumbnail;
+                    } catch (error) {
+                        throw new Error('Failed to create thumbnail: ' + error.message);
+                    }
+                };
+
+                // 이미지 URL 검증
+                const validateImageUrl = (url) => {
+                    if (!url) return true; // 빈 URL은 허용
+                    
+                    try {
+                        new URL(url);
+                        return true;
+                    } catch {
+                        return false;
+                    }
+                };
+
+                // 알림 표시 함수
+                const showNotification = (message, type = 'success') => {
+                    setNotification({ message, type });
+                    setTimeout(() => setNotification(''), 4000);
+                };
+
+                // 진행률 계산
+                const calculateProgress = (productProcesses) => {
+                    if (!productProcesses || typeof productProcesses !== 'object') return 0;
+                    const completed = Object.values(productProcesses).filter(Boolean).length;
+                    return Math.round((completed / processes.length) * 100);
+                };
+
+                // 진행률 색상
+                const getProgressColor = (progress) => {
+                    if (progress === 100) return '#10b981';
+                    if (progress >= 75) return '#3b82f6';
+                    if (progress >= 50) return '#f59e0b';
+                    if (progress >= 25) return '#ef4444';
+                    return '#6b7280';
+                };
+
+                // 공정 상태 업데이트
+                const updateProcess = (productId, processId) => {
+                    setProducts(prev => prev.map(product => {
+                        if (product.id === productId) {
+                            const newProcesses = {
+                                ...product.processes,
+                                [processId]: !product.processes[processId]
+                            };
+                            return { 
+                                ...product, 
+                                processes: newProcesses,
+                                lastModified: new Date().toISOString()
+                            };
+                        }
+                        return product;
+                    }));
+                    
+                    const processName = processes.find(p => p.id === processId)?.name;
+                    showNotification(`✅ ${processName} process updated!`);
+                };
+
+                // 이미지 파일 선택 핸들러
+                const handleImageFileChange = async (e) => {
+                    const file = e.target.files[0];
+                    if (!file) return;
+
+                    try {
+                        setImageError('');
+                        showNotification('🖼️ Creating thumbnail...', 'info');
+                        
+                        const thumbnail = await convertImageToThumbnail(file);
+                        setFormData(prev => ({ ...prev, imageUrl: thumbnail }));
+                        setImagePreview(thumbnail);
+                        showNotification('🖼️ Thumbnail created successfully!');
+                    } catch (error) {
+                        setImageError(error.message);
+                        console.error('Image thumbnail creation error:', error);
+                        showNotification(`❌ ${error.message}`, 'error');
+                    }
+                };
+
+                // 이미지 URL 변경 핸들러
+                const handleImageUrlChange = (e) => {
+                    const url = e.target.value;
+                    setFormData(prev => ({ ...prev, imageUrl: url }));
+                    
+                    if (url && validateImageUrl(url)) {
+                        setImagePreview(url);
+                        setImageError('');
+                        showNotification('🖼️ External image URL saved! (Will work on all devices)');
+                    } else if (url) {
+                        setImageError('Please enter a valid URL');
+                        setImagePreview('');
+                    } else {
+                        setImagePreview('');
+                        setImageError('');
+                    }
+                };
+
+                // 제품 추가/편집
+                const saveProduct = () => {
+                    if (!formData.name.trim()) {
+                        showNotification('❌ Product name is required', 'error');
+                        return;
+                    }
+
+                    if (formData.imageUrl && !validateImageUrl(formData.imageUrl) && !formData.imageUrl.startsWith('data:')) {
+                        showNotification('❌ Please enter a valid image URL', 'error');
+                        return;
+                    }
+                    
+                    try {
+                        if (editingProduct) {
+                            // 편집
+                            setProducts(prev => prev.map(product => 
+                                product.id === editingProduct 
+                                    ? { 
+                                        ...product, 
+                                        name: formData.name.trim(),
+                                        category: formData.category,
+                                        material: formData.material.trim() || 'Unknown',
+                                        imageUrl: formData.imageUrl || '',
+                                        lastModified: new Date().toISOString()
+                                    } 
+                                    : product
+                            ));
+                            showNotification(`✏️ Product "${formData.name}" updated!`);
+                        } else {
+                            // 새 제품 추가
+                            const newProduct = {
+                                id: Date.now(),
+                                name: formData.name.trim(),
+                                category: formData.category,
+                                material: formData.material.trim() || 'Unknown',
+                                imageUrl: formData.imageUrl || '',
+                                processes: { cad: false, wax: false, casting: false, filing: false, stone: false, engrave: false, polish: false, qc: false },
+                                createdAt: new Date().toISOString()
+                            };
+                            
+                            setProducts(prev => [...prev, newProduct]);
+                            showNotification(`🎉 Product "${newProduct.name}" added!`);
+                        }
+                        
+                        // 폼 초기화
+                        setFormData({ name: '', category: 'earring', material: '', imageUrl: '' });
+                        setImagePreview('');
+                        setImageError('');
+                        setShowModal(false);
+                        setEditingProduct(null);
+                    } catch (error) {
+                        console.error('Error saving product:', error);
+                        showNotification('❌ Failed to save product', 'error');
+                    }
+                };
+
+                // 제품 편집
+                const editProduct = (product) => {
+                    setEditingProduct(product.id);
+                    setFormData({
+                        name: product.name,
+                        category: product.category,
+                        material: product.material,
+                        imageUrl: product.imageUrl || ''
+                    });
+                    setImagePreview(product.imageUrl || '');
+                    setImageError('');
+                    setShowModal(true);
+                };
+
+                // 제품 삭제
+                const deleteProduct = (productId) => {
+                    if (confirm('Are you sure you want to delete this product?')) {
+                        const product = products.find(p => p.id === productId);
+                        setProducts(prev => prev.filter(p => p.id !== productId));
+                        showNotification(`🗑️ Product "${product?.name}" deleted.`);
+                    }
+                };
+
+                // 데이터 내보내기
+                const exportData = () => {
+                    try {
+                        const dataToExport = {
+                            products: products,
+                            exportedAt: new Date().toISOString(),
+                            version: '4.0_list_view',
+                            totalProducts: products.length,
+                            lastSaved: lastSaved?.toISOString() || null,
+                            note: 'This backup includes all product data and images. Import this file to restore data on other devices.'
+                        };
+                        
+                        const dataStr = JSON.stringify(dataToExport, null, 2);
+                        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+                        const url = URL.createObjectURL(dataBlob);
+                        
+                        const link = document.createElement('a');
+                        link.href = url;
+                        link.download = `royal_silver_jewelry_tracker_backup_${new Date().toISOString().split('T')[0]}.json`;
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(url);
+                        
+                        showNotification('📤 Data exported successfully! Import this file on other devices to sync images.');
+                    } catch (error) {
+                        console.error('Export failed:', error);
+                        showNotification('❌ Export failed', 'error');
+                    }
+                };
+
+                // 데이터 가져오기
+                const importData = (event) => {
+                    const file = event.target.files[0];
+                    if (!file) return;
+
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const importedData = JSON.parse(e.target.result);
+                            
+                            // 데이터 유효성 검사
+                            if (!importedData.products || !Array.isArray(importedData.products)) {
+                                throw new Error('Invalid backup file format');
+                            }
+                            
+                            if (!validateProductData(importedData.products)) {
+                                throw new Error('Invalid product data in backup file');
+                            }
+                            
+                            // 데이터 복원
+                            setProducts(importedData.products);
+                            setLastSaved(importedData.lastSaved ? new Date(importedData.lastSaved) : null);
+                            
+                            showNotification(`📥 Successfully imported ${importedData.products.length} products with images!`);
+                            
+                        } catch (error) {
+                            console.error('Import failed:', error);
+                            showNotification(`❌ Import failed: ${error.message}`, 'error');
+                        }
+                    };
+                    
+                    reader.onerror = () => {
+                        showNotification('❌ Failed to read backup file', 'error');
+                    };
+                    
+                    reader.readAsText(file);
+                    
+                    // 파일 입력 초기화
+                    event.target.value = '';
+                };
+
+                // 데이터 초기화
+                const resetData = () => {
+                    if (confirm('⚠️ This will delete all your data and restore new defaults (10 items). Are you sure?')) {
+                        try {
+                            const defaultProducts = getDefaultProducts();
+                            setProducts(defaultProducts);
+                            
+                            Object.values(STORAGE_KEYS).forEach(key => {
+                                localStorage.removeItem(key);
+                            });
+                            
+                            setLastSaved(null);
+                            setSaveStatus('ready');
+                            showNotification('🔄 Data reset to new defaults (10 items)');
+                        } catch (error) {
+                            console.error('Reset failed:', error);
+                            showNotification('❌ Reset failed', 'error');
+                        }
+                    }
+                };
+
+                // 필터링된 제품 목록
+                const filteredProducts = useMemo(() => {
+                    return products.filter(product => {
+                        const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                                             product.material.toLowerCase().includes(searchTerm.toLowerCase());
+                        const matchesCategory = filterCategory === 'all' || product.category === filterCategory;
+                        return matchesSearch && matchesCategory;
+                    });
+                }, [products, searchTerm, filterCategory]);
+
+                // 통계 계산
+                const statistics = useMemo(() => {
+                    const total = products.length;
+                    const completed = products.filter(p => calculateProgress(p.processes) === 100).length;
+                    const inProgress = total - completed;
+                    const avgProgress = total > 0 ? Math.round(products.reduce((sum, p) => sum + calculateProgress(p.processes), 0) / total) : 0;
+                    
+                    return { total, completed, inProgress, avgProgress };
+                }, [products]);
+
+                // 카테고리 목록
+                const categories = useMemo(() => {
+                    return ['all', ...new Set(products.map(p => p.category))];
+                }, [products]);
+
+                // 저장 상태 아이콘
+                const getSaveStatusIcon = () => {
+                    switch (saveStatus) {
+                        case 'saving': return React.createElement('div', { className: 'loading-spinner' });
+                        case 'saved': return '✅';
+                        case 'error': return '❌';
+                        case 'ready': return '💾';
+                        default: return '💾';
+                    }
+                };
+
+                // 저장 상태 텍스트
+                const getSaveStatusText = () => {
+                    switch (saveStatus) {
+                        case 'saving': return 'Saving...';
+                        case 'saved': return 'All changes saved';
+                        case 'error': return 'Save failed';
+                        case 'ready': return 'Ready to save';
+                        default: return 'Ready';
+                    }
+                };
+
+                return React.createElement('div', { className: 'container' },
+                    
+                    // 알림
+                    notification && React.createElement('div', { 
+                        className: `notification ${notification.type === 'error' ? 'error' : ''}`
+                    }, notification.message),
+                    
+                    // 헤더
+                    React.createElement('div', { className: 'glass header' },
+                        React.createElement('div', { className: `save-status ${saveStatus}` },
+                            getSaveStatusIcon(),
+                            React.createElement('div', {},
+                                React.createElement('div', {}, getSaveStatusText()),
+                                lastSaved && React.createElement('div', { className: 'last-saved' },
+                                    `Last: ${lastSaved.toLocaleTimeString()}`
+                                )
+                            )
+                        ),
+                        React.createElement('h1', {}, '💎 Royal Silver Plus Jewelry Production Tracker'),
+                        React.createElement('p', {}, 'Enhanced Production Management System v4.0 - List View')
+                    ),
+                    
+                    // 검색, 필터 및 데이터 컨트롤
+                    React.createElement('div', { className: 'controls' },
+                        React.createElement('input', {
+                            type: 'text',
+                            className: 'search-box',
+                            placeholder: '🔍 Search products...',
+                            value: searchTerm,
+                            onChange: (e) => setSearchTerm(e.target.value)
+                        }),
+                        React.createElement('select', {
+                            className: 'filter-select',
+                            value: filterCategory,
+                            onChange: (e) => setFilterCategory(e.target.value)
+                        }, categories.map(cat => 
+                            React.createElement('option', { key: cat, value: cat },
+                                cat === 'all' ? '📂 All Categories' : `${cat.charAt(0).toUpperCase() + cat.slice(1)}`
+                            )
+                        )),
+                        React.createElement('div', { className: 'data-controls' },
+                            showInstallButton && React.createElement('button', {
+                                className: 'data-btn install',
+                                onClick: installPWA,
+                                title: 'Install as PWA app'
+                            }, '📱 Install'),
+                            React.createElement('button', {
+                                className: 'data-btn export',
+                                onClick: exportData,
+                                title: 'Export data as JSON backup (includes images)'
+                            }, '📤 Export'),
+                            React.createElement('button', {
+                                className: 'data-btn import',
+                                onClick: () => document.getElementById('import-file').click(),
+                                title: 'Import backup file (restores images)'
+                            }, '📥 Import'),
+                            React.createElement('input', {
+                                id: 'import-file',
+                                type: 'file',
+                                accept: '.json',
+                                style: { display: 'none' },
+                                onChange: importData
+                            }),
+                            React.createElement('button', {
+                                className: 'data-btn reset',
+                                onClick: resetData,
+                                title: 'Reset all data to new defaults'
+                            }, '🔄 Reset')
+                        )
+                    ),
+                    
+                    // 통계
+                    React.createElement('div', { className: 'stats' },
+                        React.createElement('div', { className: 'stat-card' },
+                            React.createElement('div', { className: 'icon' }, '👥'),
+                            React.createElement('h3', {}, 'Total Products'),
+                            React.createElement('div', { className: 'number' }, statistics.total)
+                        ),
+                        React.createElement('div', { className: 'stat-card' },
+                            React.createElement('div', { className: 'icon' }, '✅'),
+                            React.createElement('h3', {}, 'Completed'),
+                            React.createElement('div', { className: 'number' }, statistics.completed)
+                        ),
+                        React.createElement('div', { className: 'stat-card' },
+                            React.createElement('div', { className: 'icon' }, '⏰'),
+                            React.createElement('h3', {}, 'In Progress'),
+                            React.createElement('div', { className: 'number' }, statistics.inProgress)
+                        ),
+                        React.createElement('div', { className: 'stat-card' },
+                            React.createElement('div', { className: 'icon' }, '📈'),
+                            React.createElement('h3', {}, 'Avg Progress'),
+                            React.createElement('div', { className: 'number' }, `${statistics.avgProgress}%`)
+                        )
+                    ),
+                    
+                    // 제품 섹션
+                    React.createElement('div', { className: 'glass products-section' },
+                        React.createElement('div', { className: 'products-header' },
+                            React.createElement('h2', {}, '📋 Products'),
+                            React.createElement('button', {
+                                className: 'add-btn',
+                                onClick: () => {
+                                    setEditingProduct(null);
+                                    setFormData({ name: '', category: 'earring', material: '', imageUrl: '' });
+                                    setImagePreview('');
+                                    setImageError('');
+                                    setShowModal(true);
+                                }
+                            }, '➕ Add Product')
+                        ),
+                        
+                        // 테이블 뷰 (데스크톱)
+                        React.createElement('div', { className: 'products-table' },
+                            // 테이블 헤더
+                            React.createElement('div', { className: 'table-header' },
+                                React.createElement('div', {}, 'Image'),
+                                React.createElement('div', {}, 'Product Info'),
+                                React.createElement('div', {}, 'Progress'),
+                                React.createElement('div', {}, 'CAD'),
+                                React.createElement('div', {}, 'Wax'),
+                                React.createElement('div', {}, 'Cast'),
+                                React.createElement('div', {}, 'File'),
+                                React.createElement('div', {}, 'Stone'),
+                                React.createElement('div', {}, 'Eng'),
+                                React.createElement('div', {}, 'Polish'),
+                                React.createElement('div', {}, 'QC'),
+                                React.createElement('div', {}, 'Actions')
+                            ),
+                            
+                            // 모바일 헤더
+                            React.createElement('div', { className: 'table-header-mobile' },
+                                '📋 Product List'
+                            ),
+                            
+                            // 제품 목록
+                            filteredProducts.length === 0 ? 
+                                React.createElement('div', { className: 'empty-state' },
+                                    '🔍 No products found. Try adjusting your search or filter.'
+                                ) :
+                                filteredProducts.map(product => {
+                                    const progress = calculateProgress(product.processes);
+                                    
+                                    // 데스크톱 테이블 뷰
+                                    const desktopRow = React.createElement('div', { 
+                                        key: product.id, 
+                                        className: 'product-row' 
+                                    },
+                                        // 이미지
+                                        React.createElement('div', { className: 'product-image-cell' },
+                                            product.imageUrl 
+                                                ? React.createElement('img', { 
+                                                    src: product.imageUrl,
+                                                    alt: product.name,
+                                                    onError: (e) => {
+                                                        e.target.style.display = 'none';
+                                                        e.target.nextSibling.style.display = 'block';
+                                                    }
+                                                })
+                                                : null,
+                                            React.createElement('div', { 
+                                                className: 'placeholder',
+                                                style: { display: product.imageUrl ? 'none' : 'block' }
+                                            }, '🖼️')
+                                        ),
+                                        
+                                        // 제품 정보
+                                        React.createElement('div', { className: 'product-info-cell' },
+                                            React.createElement('div', { className: 'product-name' }, product.name),
+                                            React.createElement('div', { className: 'product-details' }, 
+                                                `${product.category} • ${product.material}`
+                                            )
+                                        ),
+                                        
+                                        // 진행률
+                                        React.createElement('div', { className: 'progress-cell' },
+                                            React.createElement('div', { className: 'progress-text' }, `${progress}%`),
+                                            React.createElement('div', { className: 'progress-bar-small' },
+                                                React.createElement('div', {
+                                                    className: 'progress-fill-small',
+                                                    style: {
+                                                        width: `${progress}%`,
+                                                        background: getProgressColor(progress)
+                                                    }
+                                                })
+                                            )
+                                        ),
+                                        
+                                        // 각 공정 상태
+                                        ...processes.map(process =>
+                                            React.createElement('div', { 
+                                                key: process.id, 
+                                                className: 'process-cell' 
+                                            },
+                                                React.createElement('div', {
+                                                    className: `process-check ${product.processes[process.id] ? 'completed' : ''}`,
+                                                    onClick: () => updateProcess(product.id, process.id),
+                                                    title: `${process.name} Process`
+                                                }, product.processes[process.id] ? '✓' : process.icon)
+                                            )
+                                        ),
+                                        
+                                        // 액션 버튼
+                                        React.createElement('div', { className: 'actions-cell' },
+                                            React.createElement('button', {
+                                                className: 'action-btn',
+                                                onClick: () => editProduct(product),
+                                                title: 'Edit Product'
+                                            }, '✏️'),
+                                            React.createElement('button', {
+                                                className: 'action-btn',
+                                                onClick: () => deleteProduct(product.id),
+                                                title: 'Delete Product'
+                                            }, '🗑️')
+                                        )
+                                    );
+                                    
+                                    // 모바일 카드 뷰
+                                    const mobileCard = React.createElement('div', { 
+                                        key: `mobile-${product.id}`, 
+                                        className: 'product-card-mobile' 
+                                    },
+                                        React.createElement('div', { className: 'product-main-mobile' },
+                                            React.createElement('div', { className: 'product-image-mobile' },
+                                                product.imageUrl 
+                                                    ? React.createElement('img', { 
+                                                        src: product.imageUrl,
+                                                        alt: product.name
+                                                    })
+                                                    : React.createElement('div', { className: 'placeholder' }, '🖼️')
+                                            ),
+                                            React.createElement('div', { className: 'product-info-cell' },
+                                                React.createElement('div', { className: 'product-name' }, product.name),
+                                                React.createElement('div', { className: 'product-details' }, 
+                                                    `${product.category} • ${product.material}`
+                                                ),
+                                                React.createElement('div', { className: 'progress-text' }, 
+                                                    `Progress: ${progress}%`
+                                                )
+                                            ),
+                                            React.createElement('div', { className: 'actions-cell' },
+                                                React.createElement('button', {
+                                                    className: 'action-btn',
+                                                    onClick: () => editProduct(product)
+                                                }, '✏️'),
+                                                React.createElement('button', {
+                                                    className: 'action-btn',
+                                                    onClick: () => deleteProduct(product.id)
+                                                }, '🗑️')
+                                            )
+                                        ),
+                                        React.createElement('div', { className: 'processes-grid-mobile' },
+                                            processes.map(process =>
+                                                React.createElement('div', {
+                                                    key: process.id,
+                                                    className: `process-check ${product.processes[process.id] ? 'completed' : ''}`,
+                                                    onClick: () => updateProcess(product.id, process.id),
+                                                    title: `${process.name} Process`
+                                                },
+                                                    React.createElement('div', {}, process.icon),
+                                                    React.createElement('div', { style: { fontSize: '0.7rem', marginTop: '0.25rem' } }, 
+                                                        process.name
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    );
+                                    
+                                    return [desktopRow, mobileCard];
+                                }).flat()
+                        )
+                    ),
+                    
+                    // 플로팅 버튼
+                    React.createElement('button', {
+                        className: 'floating-btn',
+                        onClick: () => {
+                            setEditingProduct(null);
+                            setFormData({ name: '', category: 'earring', material: '', imageUrl: '' });
+                            setImagePreview('');
+                            setImageError('');
+                            setShowModal(true);
+                        },
+                        title: 'Add New Product'
+                    }, '➕'),
+                    
+                    // 모달
+                    showModal && React.createElement('div', { className: 'modal' },
+                        React.createElement('div', { className: 'modal-content' },
+                            React.createElement('h2', {}, editingProduct ? '✏️ Edit Product' : '➕ Add New Product'),
+                            
+                            React.createElement('div', { className: 'form-group' },
+                                React.createElement('label', { className: 'form-label' }, 'Product Name'),
+                                React.createElement('input', {
+                                    type: 'text',
+                                    className: 'form-input',
+                                    placeholder: 'Product Name (e.g., RS-01E)',
+                                    value: formData.name,
+                                    onChange: (e) => setFormData(prev => ({ ...prev, name: e.target.value }))
+                                })
+                            ),
+                            
+                            React.createElement('div', { className: 'form-group' },
+                                React.createElement('label', { className: 'form-label' }, 'Category'),
+                                React.createElement('select', {
+                                    className: 'form-input',
+                                    value: formData.category,
+                                    onChange: (e) => setFormData(prev => ({ ...prev, category: e.target.value }))
+                                },
+                                    React.createElement('option', { value: 'earring' }, 'Earring'),
+                                    React.createElement('option', { value: 'necklace' }, 'Necklace'),
+                                    React.createElement('option', { value: 'bracelet' }, 'Bracelet'),
+                                    React.createElement('option', { value: 'ring' }, 'Ring')
+                                )
+                            ),
+                            
+                            React.createElement('div', { className: 'form-group' },
+                                React.createElement('label', { className: 'form-label' }, 'Material'),
+                                React.createElement('input', {
+                                    type: 'text',
+                                    className: 'form-input',
+                                    placeholder: 'Material (e.g., Silver 925, 14K Gold)',
+                                    value: formData.material,
+                                    onChange: (e) => setFormData(prev => ({ ...prev, material: e.target.value }))
+                                })
+                            ),
+                            
+                            // 이미지 업로드 섹션
+                            React.createElement('div', { className: 'image-upload-section' },
+                                React.createElement('label', { className: 'form-label' }, '🖼️ Product Image'),
+                                
+                                React.createElement('div', { className: 'image-upload-tabs' },
+                                    React.createElement('button', {
+                                        type: 'button',
+                                        className: `tab-btn ${imageUploadType === 'url' ? 'active' : ''}`,
+                                        onClick: () => setImageUploadType('url')
+                                    }, '🔗 External URL'),
+                                    React.createElement('button', {
+                                        type: 'button',
+                                        className: `tab-btn ${imageUploadType === 'file' ? 'active' : ''}`,
+                                        onClick: () => setImageUploadType('file')
+                                    }, '📁 File Upload')
+                                ),
+                                
+                                imageUploadType === 'url' ? 
+                                    React.createElement('div', {},
+                                        React.createElement('input', {
+                                            type: 'url',
+                                            className: 'form-input',
+                                            placeholder: 'External image URL (recommended for multi-device access)',
+                                            value: formData.imageUrl.startsWith('data:') ? '' : formData.imageUrl,
+                                            onChange: handleImageUrlChange
+                                        }),
+                                        React.createElement('div', { 
+                                            style: { fontSize: '0.8rem', opacity: '0.8', marginTop: '0.5rem' } 
+                                        }, '💡 External URLs work on all devices. Use image hosting services like Imgur, Google Photos, etc.')
+                                    ) :
+                                    React.createElement('div', {},
+                                        React.createElement('input', {
+                                            type: 'file',
+                                            className: 'form-input file-input',
+                                            accept: 'image/*',
+                                            onChange: handleImageFileChange
+                                        }),
+                                        React.createElement('div', { 
+                                            style: { fontSize: '0.8rem', opacity: '0.8', marginTop: '0.5rem' } 
+                                        }, '⚠️ File uploads create thumbnails stored locally. For multi-device access, use External URL option.')
+                                    ),
+                                
+                                imageError && React.createElement('div', { className: 'image-error' }, imageError),
+                                
+                                React.createElement('div', { className: 'image-preview' },
+                                    imagePreview ? 
+                                        React.createElement('img', { 
+                                            src: imagePreview,
+                                            alt: 'Preview',
+                                            onError: () => {
+                                                setImageError('Failed to load image');
+                                                setImagePreview('');
+                                            }
+                                        }) :
+                                        React.createElement('div', { className: 'placeholder' }, '🖼️')
+                                )
+                            ),
+                            
+                            React.createElement('div', { className: 'form-buttons' },
+                                React.createElement('button', {
+                                    className: 'cancel-btn',
+                                    onClick: () => setShowModal(false)
+                                }, 'Cancel'),
+                                React.createElement('button', {
+                                    className: 'submit-btn',
+                                    onClick: saveProduct
+                                }, editingProduct ? 'Update' : 'Add Product')
+                            )
+                        )
+                    )
+                );
+            };
+
+            console.log('📋 About to render Royal Silver Plus list view app...');
+            
+            try {
+                const root = ReactDOM.createRoot(document.getElementById('root'));
+                root.render(React.createElement(RoyalSilverJewelryTrackerListView));
+                console.log('✅ Royal Silver Plus Jewelry Tracker with list view rendered successfully!');
+            } catch (error) {
+                console.error('❌ List view app render error:', error);
+                document.getElementById('root').innerHTML = `
+                    <div style="text-align: center; padding: 2rem; color: white;">
+                        <h1>❌ List View App Error</h1>
+                        <p>Error rendering list view app: ${error.message}</p>
+                        <p>Please refresh and try again.</p>
+                    </div>
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
